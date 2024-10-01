@@ -1,14 +1,21 @@
 public class ArrayMethods {
     public static void main(String[] args) {
         int[] test_arr = new int[]{1, 2, 3, 4};
-        System.out.println(arrToString(test_arr) + " should equal to: " + "[1, 2, 3, 4]");
-    
         int[][] test_2Darr = new int[][]{{0, 1, 2, 3}, {4, 5}, {6}};
+        int[][] test_blank2Darr = new int[][]{{0}, {0, 0}, {}};
+        int[][] rec_2Darr = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+
+        //test case for arrToString
+        System.out.println(arrToString(test_arr) + " should equal to: " + "[1, 2, 3, 4]");
+        
+        //test case for arrToString2D
         System.out.println(arrToString2D(test_2Darr) + " should equal to: " + "[[0, 1, 2, 3], [4, 5], [6]]");
     
+        //test cases for arr2DSum
         System.out.println(arr2DSum(test_2Darr) == 21);
-    
-        int[][] rec_2Darr = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        System.out.println(arr2DSum(test_blank2Darr) == 0);
+
+        //test case for swapRC
         System.out.println(swapRC(rec_2Darr) + " should equal to: " + "{{1, 4, 7}, {2, 5, 8}, {3, 6, 9}");
     
       }
@@ -70,7 +77,18 @@ public class ArrayMethods {
     
       /*Return the sum of all of the values in the 2D array */
       public static int arr2DSum(int[][]nums){
-        return 0;
+        int sum = 0;
+        if (nums.length == 0){
+            return 0;
+        }
+        for (int i = 0; i < nums.length; i++){
+            if (nums[i].length != 0){
+                for (int x = 0; x < nums[i].length; x++){
+                    sum += nums[i][x];
+                }
+            }
+        }
+        return sum;
       }
     
       /**Rotate an array by returning a new array with the rows and columns swapped.
