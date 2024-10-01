@@ -16,7 +16,7 @@ public class ArrayMethods {
         System.out.println(arr2DSum(test_blank2Darr) == 0);
 
         //test case for swapRC
-        System.out.println(swapRC(rec_2Darr) + " should equal to: " + "{{1, 4, 7}, {2, 5, 8}, {3, 6, 9}");
+        System.out.println(arrToString2D(swapRC(rec_2Darr)) + " should equal to: " + "{{1, 4, 7}, {2, 5, 8}, {3, 6, 9}}");
     
       }
     
@@ -96,6 +96,12 @@ public class ArrayMethods {
         * e.g. swapRC({{1,2,3},{4,5,6}}) returns {{1,4},{2,5},{3,6}}
         */
       public static int[][] swapRC(int[][]nums){
-        return new int[1][1];
+        int[][] swappedRC = new int[nums[0].length][nums.length];
+        for (int i = 0; i < nums.length; i++){
+            for (int x = 0; x < nums[i].length; x++){
+                swappedRC[x][i] = nums[i][x];
+            }
+        }
+        return swappedRC;
       }
 }
