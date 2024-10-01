@@ -4,6 +4,7 @@ public class ArrayMethods {
         int[][] test_2Darr = new int[][]{{0, 1, 2, 3}, {4, 5}, {6}};
         int[][] test_blank2Darr = new int[][]{{0}, {0, 0}, {}};
         int[][] rec_2Darr = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        int[][] replaceNeg = new int[][]{{-1, -3, 0}, {5, 9, 4}, {-8, 24, 3}}
 
         //test case for arrToString
         System.out.println(arrToString(test_arr) + " should equal to: " + "[1, 2, 3, 4]");
@@ -18,6 +19,8 @@ public class ArrayMethods {
         //test case for swapRC
         System.out.println(arrToString2D(swapRC(rec_2Darr)) + " should equal to: " + "{{1, 4, 7}, {2, 5, 8}, {3, 6, 9}}");
 
+
+        System.out.println(replaceNeg)
       }
 
       //1. Anzam S: anzams@nycstudents.net
@@ -130,7 +133,19 @@ public class ArrayMethods {
 //DO NOT use any built in methods that "copy" an array.
 //You SHOULD write a helper method for this.
 //If you don't see a good way to do that, you should stop and look at prior methods.
+  public static int[] copy1D(int[] nums){
+    int [] copy = new int[nums.length];
+    for (int i = 0; i < copy.length; i++){
+      copy[i] = nums[i];
+    }
+    return copy;
+  }
+
   public static int[][] copy(int[][] nums){
-  return null;//placeholder so it compiles
-}
+    int [][] copy = new int[][]
+    for (int i = 0; i < nums.length; i++){
+      copy[i] = copy1D(nums[i]);
+    }
+    return copy;
+  }
 }
