@@ -16,14 +16,14 @@ public class ArrayDemo{
     System.out.println(arrToString(test_arr) + " should equal to: " + Arrays.toString(test_arr));
 
     //test case for arrToString2D
-    System.out.println(arrToString2D(test_2Darr) + " should equal to: " + Arrays.toString(test_2Darr));
+    System.out.println(arrToString(test_2Darr) + " should equal to: " + Arrays.deeptoString(test_2Darr));
 
     //test cases for arr2DSum
     System.out.println(arr2DSum(test_2Darr) == 21);
     System.out.println(arr2DSum(test_blank2Darr) == 0);
 
     //test case for swapRC
-    System.out.println(arrToString2D(swapRC(rec_2Darr)) + " should equal to: " + "{{1, 4, 7}, {2, 5, 8}, {3, 6, 9}}");
+    System.out.println(arrToString(swapRC(rec_2Darr)) + " should equal to: " + "{{1, 4, 7}, {2, 5, 8}, {3, 6, 9}}");
 
     //test case for replaceNegative
     System.out.println("Original 2D Array with Negatives: " + arrToString2D(replaceNeg));
