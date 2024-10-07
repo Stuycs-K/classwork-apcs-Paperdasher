@@ -4,7 +4,7 @@ public class ArrayMethods {
         int[][] test_2Darr = new int[][]{{0, 1, 2, 3}, {4, 5}, {6}};
         int[][] test_blank2Darr = new int[][]{{0}, {0, 0}, {}};
         int[][] rec_2Darr = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
-        int[][] replaceNeg = new int[][]{{-1, -3, 0}, {5, 9, 4}, {-8, 24, 3}};
+        int[][] replaceNeg = new int[][]{{-1, -3, 0}, {5, -9, 4}, {-8, 24, 3}};
 
         //test case for arrToString
         System.out.println(arrToString(test_arr) + " should equal to: " + "[1, 2, 3, 4]");
@@ -20,7 +20,9 @@ public class ArrayMethods {
         System.out.println(arrToString2D(swapRC(rec_2Darr)) + " should equal to: " + "{{1, 4, 7}, {2, 5, 8}, {3, 6, 9}}");
 
         //test case for replaceNegative
-        System.out.println();
+        System.out.println("Original 2D Array with Negatives: " + arrToString2D(replaceNeg));
+        replaceNegative(replaceNeg);
+        System.out.println("New 2D Array with Negatives replaced: " + arrToString2D(replaceNeg));
 
         //test cases for copy
         System.out.println(test_2Darr + " should not equal to: " + copy(test_2Darr));
