@@ -11,6 +11,7 @@ public class ArrayDemo{
     int[][] test_blank2Darr = new int[][]{{0}, {0, 0}, {}};
     int[][] rec_2Darr = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
     int[][] replaceNeg = new int[][]{{-1, -3, 0}, {5, -9, 4}, {-8, 24, 3}};
+    int[][] countzeros = new int[][]{{0, 1, 2}, {30, 20, 10}, {94, 32, 60, 0, 7, 3}, {0}};
 
     //test case for arrToString
     System.out.println(arrToString(test_arr) + " should equal to: " + Arrays.toString(test_arr));
@@ -26,19 +27,23 @@ public class ArrayDemo{
     System.out.println(arrToString(swapRC(rec_2Darr)) + " should equal to: " + "{{1, 4, 7}, {2, 5, 8}, {3, 6, 9}}");
 
     //test case for replaceNegative
-    System.out.println("Original 2D Array with Negatives: " + arrToString2D(replaceNeg));
+    System.out.println("Original 2D Array with Negatives: " + arrToString(replaceNeg));
     replaceNegative(replaceNeg);
-    System.out.println("New 2D Array with Negatives replaced: " + arrToString2D(replaceNeg));
+    System.out.println("New 2D Array with Negatives replaced: " + arrToString(replaceNeg));
 
     //test cases for copy
     System.out.println(test_2Darr + " should not equal to: " + copy(test_2Darr));
-    System.out.println(arrToString2D(copy(test_2Darr)) + " should equal to: " + "{{0, 1, 2, 3}, {4, 5}, {6}}");
+    System.out.println(Arrays.deeptoString(copy(test_2Darr)) + " should equal to: " + "{{0, 1, 2, 3}, {4, 5}, {6}}");
 
     System.out.println(test_blank2Darr + " should not equal to: " + copy(test_blank2Darr));
-    System.out.println(arrToString2D(copy(test_blank2Darr)) + " should equal to: " + "{{0}, {0, 0}, {}}");
+    System.out.println(Arrays.deeptoString(copy(test_blank2Darr)) + " should equal to: " + "{{0}, {0, 0}, {}}");
 
     test_2Darr[0][3] = 4;
-    System.out.println(arrToString2D(test_2Darr) + " should equal to: " + "{{0, 1, 2, 4}, {4, 5}, {6}}");
+    System.out.println(Arrays.deeptoString(test_2Darr) + " should equal to: " + "{{0, 1, 2, 4}, {4, 5}, {6}}");
+
+    //test case for countZeros2D
+    System.out.println(countZeros2D(test_blank2Darr) + " should equal to: " + "3");
+    System.out.println(countZeros2D(countzeros) + " should equal to: " + "3");
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
@@ -86,18 +91,18 @@ public class ArrayDemo{
 
   //1. Calculate and return how many elements equal zero in the 2D array.
   public static int countZeros2D(int[][] nums){
-    if (nums.length = 0){
+    if (nums.length == 0){
       return 0;
     }
     int count = 0;
     for (int i = 0; i < nums.length; i++){
       for (int x = 0; x < nums[i].length; x++){
-        if (nums[i][x] = 0){
-          sum++;
+        if (nums[i][x] == 0){
+          count++;
         }
       }
     }
-    return sum;
+    return count;
   }
 
   //2. Calculate the sum of a 2d array
