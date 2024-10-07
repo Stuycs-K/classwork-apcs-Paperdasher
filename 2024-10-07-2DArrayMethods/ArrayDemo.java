@@ -13,10 +13,10 @@ public class ArrayDemo{
     int[][] replaceNeg = new int[][]{{-1, -3, 0}, {5, -9, 4}, {-8, 24, 3}};
 
     //test case for arrToString
-    System.out.println(arrToString(test_arr) + " should equal to: " + "[1, 2, 3, 4]");
+    System.out.println(arrToString(test_arr) + " should equal to: " + Arrays.toString(test_arr));
 
     //test case for arrToString2D
-    System.out.println(arrToString2D(test_2Darr) + " should equal to: " + "[[0, 1, 2, 3], [4, 5], [6]]");
+    System.out.println(arrToString2D(test_2Darr) + " should equal to: " + Arrays.toString(test_2Darr));
 
     //test cases for arr2DSum
     System.out.println(arr2DSum(test_2Darr) == 21);
