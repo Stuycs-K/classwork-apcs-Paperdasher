@@ -6,6 +6,39 @@ public class ArrayDemo{
     //Compare Arrays.toString(yourArray) to YOUR arrayToString() method to make sure yours is correct
     //do not use any other Arrays.method()
 
+    int[] test_arr = new int[]{1, 2, 3, 4};
+    int[][] test_2Darr = new int[][]{{0, 1, 2, 3}, {4, 5}, {6}};
+    int[][] test_blank2Darr = new int[][]{{0}, {0, 0}, {}};
+    int[][] rec_2Darr = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+    int[][] replaceNeg = new int[][]{{-1, -3, 0}, {5, -9, 4}, {-8, 24, 3}};
+
+    //test case for arrToString
+    System.out.println(arrToString(test_arr) + " should equal to: " + "[1, 2, 3, 4]");
+
+    //test case for arrToString2D
+    System.out.println(arrToString2D(test_2Darr) + " should equal to: " + "[[0, 1, 2, 3], [4, 5], [6]]");
+
+    //test cases for arr2DSum
+    System.out.println(arr2DSum(test_2Darr) == 21);
+    System.out.println(arr2DSum(test_blank2Darr) == 0);
+
+    //test case for swapRC
+    System.out.println(arrToString2D(swapRC(rec_2Darr)) + " should equal to: " + "{{1, 4, 7}, {2, 5, 8}, {3, 6, 9}}");
+
+    //test case for replaceNegative
+    System.out.println("Original 2D Array with Negatives: " + arrToString2D(replaceNeg));
+    replaceNegative(replaceNeg);
+    System.out.println("New 2D Array with Negatives replaced: " + arrToString2D(replaceNeg));
+
+    //test cases for copy
+    System.out.println(test_2Darr + " should not equal to: " + copy(test_2Darr));
+    System.out.println(arrToString2D(copy(test_2Darr)) + " should equal to: " + "{{0, 1, 2, 3}, {4, 5}, {6}}");
+
+    System.out.println(test_blank2Darr + " should not equal to: " + copy(test_blank2Darr));
+    System.out.println(arrToString2D(copy(test_blank2Darr)) + " should equal to: " + "{{0}, {0, 0}, {}}");
+
+    test_2Darr[0][3] = 4;
+    System.out.println(arrToString2D(test_2Darr) + " should equal to: " + "{{0, 1, 2, 4}, {4, 5}, {6}}");
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
