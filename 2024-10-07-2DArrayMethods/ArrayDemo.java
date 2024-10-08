@@ -17,7 +17,7 @@ public class ArrayDemo{
     System.out.println(arrToString(test_arr) + " should equal to: " + Arrays.toString(test_arr));
 
     //test case for arrToString2D
-    System.out.println(arrToString(test_2Darr) + " should equal to: " + Arrays.deeptoString(test_2Darr));
+    System.out.println(arrToString(test_2Darr) + " should equal to: " + Arrays.deepToString(test_2Darr));
 
     //test cases for arr2DSum
     System.out.println(arr2DSum(test_2Darr) == 21);
@@ -33,13 +33,13 @@ public class ArrayDemo{
 
     //test cases for copy
     System.out.println(test_2Darr + " should not equal to: " + copy(test_2Darr));
-    System.out.println(Arrays.deeptoString(copy(test_2Darr)) + " should equal to: " + "{{0, 1, 2, 3}, {4, 5}, {6}}");
+    System.out.println(Arrays.deepToString(copy(test_2Darr)) + " should equal to: " + "{{0, 1, 2, 3}, {4, 5}, {6}}");
 
     System.out.println(test_blank2Darr + " should not equal to: " + copy(test_blank2Darr));
-    System.out.println(Arrays.deeptoString(copy(test_blank2Darr)) + " should equal to: " + "{{0}, {0, 0}, {}}");
+    System.out.println(Arrays.deepToString(copy(test_blank2Darr)) + " should equal to: " + "{{0}, {0, 0}, {}}");
 
     test_2Darr[0][3] = 4;
-    System.out.println(Arrays.deeptoString(test_2Darr) + " should equal to: " + "{{0, 1, 2, 4}, {4, 5}, {6}}");
+    System.out.println(Arrays.deepToString(test_2Darr) + " should equal to: " + "{{0, 1, 2, 4}, {4, 5}, {6}}");
 
     //test case for countZeros2D
     System.out.println(countZeros2D(test_blank2Darr) + " should equal to: " + "3");
