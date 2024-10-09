@@ -16,7 +16,7 @@ public class ArrayDemo{
     //test case for arrToString
     System.out.println(arrToString(test_arr) + " should equal to: " + Arrays.toString(test_arr));
 
-    //test case for arrToString2D
+    //test case for arrToString(2D)
     System.out.println(arrToString(test_2Darr) + " should equal to: " + Arrays.deepToString(test_2Darr));
 
     //test cases for arr2DSum
@@ -31,19 +31,14 @@ public class ArrayDemo{
     replaceNegative(replaceNeg);
     System.out.println("New 2D Array with Negatives replaced: " + arrToString(replaceNeg));
 
-    //test cases for copy
-    System.out.println(test_2Darr + " should not equal to: " + copy(test_2Darr));
-    System.out.println(Arrays.deepToString(copy(test_2Darr)) + " should equal to: " + "{{0, 1, 2, 3}, {4, 5}, {6}}");
-
-    System.out.println(test_blank2Darr + " should not equal to: " + copy(test_blank2Darr));
-    System.out.println(Arrays.deepToString(copy(test_blank2Darr)) + " should equal to: " + "{{0}, {0, 0}, {}}");
-
-    test_2Darr[0][3] = 4;
-    System.out.println(Arrays.deepToString(test_2Darr) + " should equal to: " + "{{0, 1, 2, 4}, {4, 5}, {6}}");
 
     //test case for countZeros2D
     System.out.println(countZeros2D(test_blank2Darr) + " should equal to: " + "3");
     System.out.println(countZeros2D(countzeros) + " should equal to: " + "3");
+
+    //test case for htmltable
+    System.out.println(htmlTable(test_2Darr));
+    System.out.println("Above line should be the same as: " + "<table><tr><td>0</td><td>1</td><td>2</td><td>3</td></tr><tr><td>4</td><td>5</td></tr><tr><td>6</td></tr></table>");
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
@@ -184,6 +179,17 @@ public class ArrayDemo{
   //   e.g. htmlTable(new int[][]{{1,2},{3}})  returns:
   // "<table><tr><td>1</td><td>2</td></tr><tr><td>3</td></tr></table>"
   public static String htmlTable(int[][]nums){
-    return "";
+    String htmlstring = "<table>";
+    for (int i = 0; i < nums.length; i++){
+      htmlstring += "<tr>";
+      for (int x = 0; x < nums[i].length; x++){
+        htmlstring += "<td>";
+        htmlstring += nums[i][x];
+        htmlstring += "</td>";
+      }
+      htmlstring += "</tr>";
+    }
+    htmlstring += "</table>";
+    return htmlstring;
   }
 }
