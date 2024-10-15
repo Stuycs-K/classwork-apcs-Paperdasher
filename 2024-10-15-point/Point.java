@@ -39,7 +39,9 @@ public class Point{
     do not write redundant code.
     */
     public static double distance(Point a, Point b){
-      return 0.0;
+      double xdist = Math.pow(b.x - a.x, 2);
+      double ydist = Math.pow(b.y - a.y, 2);
+      return Math.pow(xdist + ydist, .5);
     }
   
   
