@@ -31,7 +31,7 @@ public class Point{
     public double distanceTo(Point other){
       double xdist = Math.pow(other.getX() - x, 2);
       double ydist = Math.pow(other.getY() - y, 2);
-      return Math.pow( xdist + ydist, .5);
+      return Math.sqrt( xdist + ydist);
     }
   
     /*
@@ -41,7 +41,7 @@ public class Point{
     public static double distance(Point a, Point b){
       double xdist = Math.pow(b.x - a.x, 2);
       double ydist = Math.pow(b.y - a.y, 2);
-      return Math.pow(xdist + ydist, .5);
+      return Math.sqrt(xdist + ydist);
     }
   
   
