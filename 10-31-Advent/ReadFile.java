@@ -19,7 +19,19 @@ public class ReadFile {
           input.nextLine();
         }
       }
-      input.close();//releases the file from your program
+      input.close();
+
+      Scanner input2 = new Scanner(file);
+      for (int i = 0; input2.hasNextLine(); i++){
+        if (input2.next().indexOf("{") != -1){
+          System.out.println(input2);
+        }
+        else{
+          input2.nextLine();
+          //f
+        }
+      }
+      input2.close();//releases the file from your program
 
     } catch (FileNotFoundException ex) {
       //File not found what should you do?
