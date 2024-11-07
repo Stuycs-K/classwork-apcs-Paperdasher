@@ -1,3 +1,7 @@
+/*  Overriding the getName method in the Bird subclass, the speak ,method clalled the redefined
+ getName from the Bird class
+*/
+
 public class Driver{
     public static void main(String[] args){
       Animal sheep = new Animal("Baa", 4, "Shaun");
