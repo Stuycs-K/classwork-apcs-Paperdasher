@@ -7,20 +7,24 @@ Also since the Bird object has more properties than the Animal object, having a 
 
 public class Driver{
     public static void main(String[] args){
+      System.out.println("INITIAL TESTS\n");
       Animal sheep = new Animal("Baa", 4, "Shaun");
       sheep.speak();
       System.out.println("--------");
       Bird bluejay = new Bird("chirp", 3, "bob", 2.4, "blue");
       bluejay.speak();
-      System.out.println("-----------");
 
+      System.out.println("\nTests for different variable types\n");
+      System.out.println("Animal = new Animal");
       Animal a1 = new Animal("ribbit", 6, "froggie");
       a1.speak();
       System.out.println("---------");
+      System.out.println("Bird = new Bird");
       Bird b1 = new Bird("pawk pawk", 7, "chickens", 34.6, "white");
       b1.speak();
       System.out.println("--------------");
       // Bird b2 = new Animal("roar", 21, "lion");
+      System.out.println("Animal = new Bird");
       Animal a2 = new Bird("chirppy", 2, "birdie", 1.8, "yellow");
       a2.speak();
     }
