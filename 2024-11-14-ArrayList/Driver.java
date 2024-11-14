@@ -22,5 +22,11 @@ public class Driver{
     System.out.print(test3 + " --> ");
     ArrayListPractice.replaceEmpty(test3);
     System.out.println(test3);
+
+    //testing makeReversedList
+    System.out.println("\n");
+    System.out.println(test2 + " --> " + ArrayListPractice.makeReversedList(test2));
+    System.out.println(test1 + " --> " + ArrayListPractice.makeReversedList(test1));
+    System.out.println(test3 + " --> " + ArrayListPractice.makeReversedList(test3));
   }
 }

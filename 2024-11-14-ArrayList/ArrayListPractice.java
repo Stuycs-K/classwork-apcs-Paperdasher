@@ -22,7 +22,15 @@ public class ArrayListPractice{
         original.set(i, "Empty");
       }
     }
-  } 
+  }
 
+  public static ArrayList<String> makeReversedList( ArrayList<String> original){
+    //return a new ArrayList that is in the reversed order of the original.
+    ArrayList<String> revArr = new ArrayList<String>(original.size());
+    for (int i = original.size() - 1; i >= 0; i--) {
+      revArr.add(original.get(i));
+    }
+    return revArr;
+  }
 
 }
