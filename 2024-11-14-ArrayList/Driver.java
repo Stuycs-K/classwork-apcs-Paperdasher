@@ -10,7 +10,7 @@ public class Driver{
 
     //testing replaceEmpty
     System.out.println("\nTESTING REPLACEMEMPTY");
-    ArrayList<String> test1 = ArrayListPractice.createRandomArray(5);
+    ArrayList<String> test1 = ArrayListPractice.createRandomArray(10);
     ArrayList<String> test2 = ArrayListPractice.createRandomArray(0);
     ArrayList<String> test3 = ArrayListPractice.createRandomArray(200000);
 
@@ -34,7 +34,7 @@ public class Driver{
 
     //testing mixLists
     System.out.println("\nTESTING MIXLISTS");
-    ArrayList<String> test4 = ArrayListPractice.createRandomArray(20);
+    ArrayList<String> test4 = ArrayListPractice.createRandomArray(10);
     ArrayList<String> test5 = ArrayListPractice.createRandomArray(10000);
     ArrayList<String> test6 = new ArrayList<String> (5);
     ArrayList<String> test7 = new ArrayList<String> (15);
@@ -49,8 +49,9 @@ public class Driver{
     System.out.println("Mixing test6 and test7: " + ArrayListPractice.mixLists(test6, test7));
     System.out.println("Mixing test7 and test6: " + ArrayListPractice.mixLists(test7, test6));
 
-    System.out.println(test4); System.out.println(test6);
-    System.out.println("Mixing randomArray with preset array" + ArrayListPractice.mixLists(test4, test6));
-    //System.out.println(ArrayListPractice.mixLists(test5, test3));
+    System.out.println(test4); System.out.println(test1);
+    System.out.println("Mixing same length random arrays" + ArrayListPractice.mixLists(test4, test1));
+
+    System.out.println(ArrayListPractice.mixLists(test5, test3));
   }
 }

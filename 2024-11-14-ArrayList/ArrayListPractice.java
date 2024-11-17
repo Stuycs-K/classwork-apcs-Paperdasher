@@ -33,4 +33,32 @@ public class ArrayListPractice{
     return revArr;
   }
 
+  public static ArrayList<String> mixLists( ArrayList<String> a,  ArrayList<String> b){
+    //return a new ArrayList that has all values of a and b in alternating order that is:
+    //a[0], b[0], a[1], b[1]...
+    //If one list is longer than the other, just attach the remaining values to the end.
+    ArrayList<String> combined = new ArrayList<String>(a.size() + b.size());
+    int maxindex = 0, lessindex = 0;
+    if (a.size() <= b.size()){
+      maxindex = b.size();
+      lessindex = a.size();
+    }
+    if (b.size() <= a.size()){
+      maxindex = a.size();
+      lessindex = b.size();
+    }
+    for (int i = 0; i < maxindex; i++){
+      if(i < lessindex){
+        combined.add(a.get(i));
+        combined.add(b.get(i));
+      }
+      else if(i < a.size() && i >= b.size()){
+        combined.add(a.get(i));
+      }
+      else{
+        combined.add(b.get(i));
+      }
+    }
+    return combined;
+  } 
 }
