@@ -34,8 +34,23 @@ public class Driver{
 
     //testing mixLists
     System.out.println("\nTESTING MIXLISTS");
-    System.out.println(test2 + " --> " + ArrayListPractice.mixLists(test2));
-    System.out.prinltn(test1 + " --> " + ArrayListPractice.mixLists(test1));
-    //System.out.println(test3 + " --> " + ArrayListPractice.mixLists(test3));
+    ArrayList<String> test4 = ArrayListPractice.createRandomArray(20);
+    ArrayList<String> test5 = ArrayListPractice.createRandomArray(10000);
+    ArrayList<String> test6 = new ArrayList<String> (5);
+    ArrayList<String> test7 = new ArrayList<String> (15);
+    test6.add("1"); test6.add("3"); test6.add("5"); test6.add("7"); test6.add("9");
+    test7.add("2"); test7.add("4"); test7.add("6"); test7.add("8"); test7.add("10"); test7.add("12"); test7.add("14"); 
+    test7.add("16"); test7.add("18"); test7.add("20"); test7.add("22");
+
+    System.out.println(test1); System.out.println(test2);
+    System.out.println("Mixing randomArray with an empty array: " + ArrayListPractice.mixLists(test2, test1));
+
+    System.out.println(test6); System.out.println(test7);
+    System.out.println("Mixing test6 and test7: " + ArrayListPractice.mixLists(test6, test7));
+    System.out.println("Mixing test7 and test6: " + ArrayListPractice.mixLists(test7, test6));
+
+    System.out.println(test4); System.out.println(test6);
+    System.out.println("Mixing randomArray with preset array" + ArrayListPractice.mixLists(test4, test6));
+    //System.out.println(ArrayListPractice.mixLists(test5, test3));
   }
 }
