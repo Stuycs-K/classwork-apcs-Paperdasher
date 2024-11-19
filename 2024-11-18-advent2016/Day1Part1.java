@@ -6,44 +6,50 @@ public class Day1Part1{
 
   public static int blocks_away(String input){
     int x_corr = 0, y_corr = 0;
-    int angle_dir = 0;
-    int blocks = 0;
-    Scanner sc1 = new Scanner(input);
-    Scanner sc2 = new Scanner(input);
-
-    while(sc1.hasNext()){
-      if (sc1.next().contains("L")){
-        angle_dir -= 90;
-      }
-      else{
-        angle_dir += 90;
-      }
-
-      if ((angle_dir >= 360) || (angle_dir <= -360)){
-        (angle_dir - ((angle_dir / 360) * 360));
-      }
-
-      if (angle_dir == 0){
-        y_corr += sc2.nextInt();
-      }
-      if (angle_dir == 90 || angle_dir == -270){
-        x_corr += sc2.nextInt();
-      }
-      if (angle_dir == 180 || angle_dir == -180){
-        y_corr -= sc2.nextInt();
-      }
-      if (angle_dir == 270 || angle_dir == -90){
-        x_corr -= sc2.nextInt();
-      }
-
-      blocks = Math.abs(x_corr) + Math.abs(y_corr);
-      return blocks;
+    int angle_dir = 0, blocks = 0;
+    String[] datainput = null;
+    try{
+      File file = new File(input);
+      Scanner sc = new Scanner(file);
+      String data = sc.nextLine();
+      datainput = data.split(", ");
+      sc.close();  
+    } catch(FileNotFoundException e){
+      System.out.println("File not found");
+    }
+    
+    if (datainput == null){
+      return 0;
     }
 
+    for (int i = 0; i < datainput.length; i++){
+      if (datainput[i].contains("L")){
+        angle_dir--;
+      }
+      else{
+        angle_dir++;
+      }
 
+      if ((angle_dir >= 4) || (angle_dir <= -4)){
+        angle_dir = (angle_dir + 4) % 4;
+      }
+      
+      blocks = Integer.parseInt(datainput[i].substring(1));
 
+      if (angle_dir == 0){
+        y_corr += blocks;
+      }
+      if (angle_dir == 1 || angle_dir == -3){
+        x_corr += blocks;
+      }
+      if (angle_dir == 2|| angle_dir == -2){
+        y_corr -= blocks;
+      }
+      if (angle_dir == 3 || angle_dir == -1){
+        x_corr -= blocks;
+      }
+    }
 
-
-    return blocks;
+    return Math.abs(x_corr) + Math.abs(y_corr);
   }
 }
