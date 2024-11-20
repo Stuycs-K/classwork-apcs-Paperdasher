@@ -4,26 +4,48 @@ import java.io.FileNotFoundException;
 
 public class Day2 {
   public static void main(String[] args){
-      Bathroom("Day2Input.txt");
+      System.out.println(Bathroom("Day2Input.txt"));
   }
 
-  public static int Bathroom(String input){
+  public static String Bathroom(String input){
 
-    String[] data = null;
+    String key = "";
+    int[][] keypad = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+    int currentRow = 1;  
+    int currentCol = 1;
+    
     try{
       File file = new File(input);
       Scanner sc = new Scanner(file);
-      for (int i = 0; sc.hasNextLine(); i++){
-        data[i] = sc.nextLine();
+
+      while(sc.hasNextLine()){
+        String datastring = sc.nextLine();
+        for (char i : datastring.toCharArray()){
+          if (i == 'U') {
+            if (currentRow - 1 >= 0) {
+              currentRow--;
+            }
+          } 
+          else if (i == 'D') {
+            if (currentRow + 1 < keypad.length) {
+              currentRow++;
+            }
+          } 
+          else if (i == 'L') {
+            if (currentCol - 1 >= 0) {
+              currentCol--;
+            }
+          } 
+          else{
+            if (currentCol + 1 < keypad[0].length) {
+              currentCol++;
+            }
+          }
+        }
+        key += keypad[currentRow][currentCol]; 
       }
-      sc.close();
-    } catch(FileNotFoundException e){
-      System.out.println("File not found");
-    }
-
-    String[][] keypad = new String[3][3];
-
-    
-
-  }
+    sc.close();
+  }catch(FileNotFoundException e){
+      System.out.println("File not found");}
+  return key;}
 }
