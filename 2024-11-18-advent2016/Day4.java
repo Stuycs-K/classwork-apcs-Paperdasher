@@ -7,7 +7,14 @@ public class Day4 {
 
     public static boolean checkreal(String room){
         //check if room is real or not
-        return false;
+        //if charAt val is >57, letter
+        for (int i = 0; i < room.length(); i++){
+          if (room.charAt(i) > 57){
+              int counter++;//*****make one for each new letter
+          }
+        }
+        String top5 = "";//add top 5 char to string
+        return top5.equals(room.substring(-2, -7));
     }
 
     public static int ID(String room){
