@@ -26,21 +26,16 @@ public class Day6 {
                 }
             }
 
+            int max = -1, maxIndex = -1;
             for (int i = 0; i < 8; i++){
-                int left = 0, right = freq[i].length - 1;
-                int largestValue = freq[i][0];
-                int largestIndex = 0;
-
-                while (left <= right) {
-                    int mid = left + (right - left) / 2;
-
-                    if (freq[i][mid] > largestValue) {
-                        largestValue = freq[i][mid];
-                        largestIndex = mid;
+                max = -1; maxIndex = -1;
+                for (int j = 0; j < 26; j++){
+                    if (max < freq[i][j]){
+                        max = freq[i][j];
+                        maxIndex = j;
                     }
-                    left = mid + 1;
                 }
-                output += Character.toString((char)(97 + largestIndex));
+                output += Character.toString((char)(97 + maxIndex));
             }
             return output;
         } catch(FileNotFoundException e){
