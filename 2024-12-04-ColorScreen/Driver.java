@@ -56,6 +56,37 @@ public class Driver {
             System.out.print("*");
         }
         
+        System.out.print("\u001b[1;30m");
+        Text.go(20, 5);
+        System.out.print("\u001b[48;2;"+0+";"+255+";"+0+"m");
+        System.out.println(".............         ............");
+        Text.go(20, 6);
+        System.out.print("\u001b[48;2;"+30+";"+255+";"+30+"m");
+        System.out.println(".............         ............");
+        Text.go(20, 7);
+        System.out.print("\u001b[48;2;"+60+";"+255+";"+60+"m");
+        System.out.println("......                ......      ");
+        Text.go(20, 8);
+        System.out.print("\u001b[48;2;"+90+";"+255+";"+90+"m");
+        System.out.println(".....                 ......      ");
+        Text.go(20, 9);
+        System.out.print("\u001b[48;2;"+120+";"+255+";"+120+"m");
+        System.out.println(".....                 ............");
+        Text.go(20, 10);
+        System.out.print("\u001b[48;2;"+150+";"+255+";"+150+"m");
+        System.out.println(".....                 ............");
+        Text.go(20, 11);
+        System.out.print("\u001b[48;2;"+180+";"+255+";"+180+"m");
+        System.out.println(".....                       ......");
+        Text.go(20, 12);
+        System.out.print("\u001b[48;2;"+210+";"+255+";"+210+"m");
+        System.out.println("......                      ......");
+        Text.go(20, 13);
+        System.out.print("\u001b[48;2;"+240+";"+255+";"+240+"m");
+        System.out.println(".............         ............");
+        Text.go(20, 14);
+        System.out.print("\u001b[48;2;"+255+";"+255+";"+255+"m");
+        System.out.println(".............         ............");
 
         Text.go(1, 31);
         System.out.println(Text.RESET);
