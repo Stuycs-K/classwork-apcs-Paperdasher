@@ -29,7 +29,7 @@ public class Text{
     //top left is 1,1
     //row is y (higher numbers go down)
     //column is x
-    public static void go(int row,int col){
+    public static void go(int col,int row){
         System.out.print("\033[" + row + ";" + col + "H");
     }
     
