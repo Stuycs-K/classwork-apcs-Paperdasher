@@ -14,7 +14,7 @@ public class Warrior extends Adventurer{
   }
 
   public Mana(String name, int special){
-    this.SpecialName = SpecialName;
+    this.SpecialName = name;
     this.Special = special;
   }
 
@@ -43,20 +43,23 @@ public class Warrior extends Adventurer{
   */
   //hurt or hinder the target adventurer
   public String attack(Adventurer other){
-    other.setSpecial(10);
-    return ;
+    super.applyDamage(5);
+    return "You attacked " + other.getName() + " and applied 5 damage";
   }
 
   //heal or buff the target adventurer
   public String support(Adventurer other){
-    return ;
+
+    return "You supported " + other.getName() + " by healing 5 HP";
   }
 
   //heal or buff self
   public String support(){
-    return ;
+    return "You supported yourself by healing 5 HP";
   }
 
   //hurt or hinder the target adventurer, consume some special resource
-  public String specialAttack(Adventurer other);
+  public String specialAttack(Adventurer other);{
+    return "You attacked " + other.getName() + " and consumed " + ___ + " mana";
+  }
 }
