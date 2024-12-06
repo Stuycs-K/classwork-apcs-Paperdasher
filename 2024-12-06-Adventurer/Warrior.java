@@ -1,7 +1,7 @@
 public class Warrior extends Adventurer{
   //instance variables
-  private String name;
-  private int HP,maxHP;
+  private String name, SpecialName;
+  private int HP,maxHP,Special,SpecialMax;
 
   //constructors
   public Warrior(String name){
@@ -10,23 +10,29 @@ public class Warrior extends Adventurer{
 
   public Warrior(String name, int hp){
     super(name, hp);
+    this.maxHP = 200;
+  }
+
+  public Mana(String name, int special){
+    this.SpecialName = SpecialName;
+    this.Special = special;
   }
 
   //Accessor Methods
   public String getSpecialName(){
-    return super.getName().substring(0, 13);
+    return SpecialName;
   }
 
   public int getSpecial(){
-    return;
+    return Special;
   }
 
   public void setSpecial(int n){
-
+    this.Special = n;
   }
 
   public int getSpecialMax(){
-    return;
+    return SpecialMax;
   }
 
 
@@ -37,6 +43,7 @@ public class Warrior extends Adventurer{
   */
   //hurt or hinder the target adventurer
   public String attack(Adventurer other){
+    other.setSpecial(10);
     return ;
   }
 
