@@ -5,12 +5,12 @@ public class Warrior extends Adventurer{
   //constructors
   public Warrior(String name){
     super(name);
-    mana = 0;
+    mana = (int)(Math.random() * 100 + 1);
   }
 
   public Warrior(String name, int hp){
     super(name, hp);
-    mana = 0;
+    mana = (int)(Math.random() * 100 + 1);
   }
 
   public Warrior(String name, int hp, int mana){
