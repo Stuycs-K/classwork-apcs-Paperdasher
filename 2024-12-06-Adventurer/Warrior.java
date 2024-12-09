@@ -1,38 +1,38 @@
 public class Warrior extends Adventurer{
   //instance variables
-  private String name, SpecialName;
-  private int HP,maxHP,Special,SpecialMax;
+  private int mana;
 
   //constructors
   public Warrior(String name){
     super(name);
+    mana = 0;
   }
 
   public Warrior(String name, int hp){
     super(name, hp);
-    this.maxHP = 200;
+    mana = 0;
   }
 
-  public Mana(String name, int special){
-    this.SpecialName = name;
-    this.Special = special;
+  public Warrior(String name, int hp, int mana){
+    super(name, hp);
+    this.mana = mana;
   }
 
   //Accessor Methods
   public String getSpecialName(){
-    return SpecialName;
+    return "mana";
   }
 
   public int getSpecial(){
-    return Special;
+    return mana;
   }
 
   public void setSpecial(int n){
-    this.Special = n;
+    mana = n;
   }
 
   public int getSpecialMax(){
-    return SpecialMax;
+    return 100;
   }
 
 
