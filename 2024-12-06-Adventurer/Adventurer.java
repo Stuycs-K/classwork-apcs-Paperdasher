@@ -62,7 +62,9 @@ public abstract class Adventurer{
     this.HP -= amount;
   }
 
-
+  public void applyHeal(int amount){
+    this.HP += amount;
+  }
 
   //toString method
   public String toString(){

@@ -44,13 +44,13 @@ public class Warrior extends Adventurer{
   //hurt or hinder the target adventurer
   public String attack(Adventurer other){
     other.applyDamage(5);
-    return "You attacked " + other.getName() + " and applied 5 damage";
+    return getName() + " attacked " + other.getName() + " and applied 5 damage";
   }
 
   //heal or buff the target adventurer
   public String support(Adventurer other){
     other.applyHeal(5);
-    return "You supported " + other.getName() + " by healing 5 HP";
+    return getName() + " supported " + other.getName() + " by healing 5 HP";
   }
 
   //heal or buff self
@@ -58,11 +58,11 @@ public class Warrior extends Adventurer{
     applyHeal(5);
     int spec = (int)(5 * Math.random() + 1);
     restoreSpecial(spec);
-    return "You supported yourself by healing 5 HP and gained " + spec + "mana";
+    return getName() + " supported themself by healing 5 HP and gained " + spec + " mana";
   }
 
   //hurt or hinder the target adventurer, consume some special resource
-  public String specialAttack(Adventurer other);{
+  public String specialAttack(Adventurer other){
     if (this.mana >= 5){
       this.mana -= 5;
       other.applyDamage(20);
