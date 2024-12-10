@@ -2,20 +2,23 @@ import java.util.Scanner;
 public class Game {
   public static void main(String[] args) {
     Scanner userInput = new Scanner(System.in);
-    System.out.println("Enter username");
+    System.out.print("Enter username: ");
     String userName = userInput.nextLine();
-    System.out.println("Username is: " + userName);
 
-    System.out.println("Welcome to the game, " + userName);
+    System.out.println("\nWelcome to the game, " + userName  + "!");
     System.out.println("Would you like to be a mighty warrior(w), or a savvy CodeWarrior(c)?");
+    System.out.print("USER INPUT: ");
     boolean first_input = true;
 
     int charchoice = -1;
-    String charchoiced = "";
     while(first_input){
       String userchar = userInput.nextLine();
-      if (userchar.equals("w") || userchar.equals("c")){
-        charchoiced = userchar;
+      if (userchar.equals("w")){
+        charchoice = 0;
+        first_input = false;
+      }
+      else if(userchar.equals("c")){
+        charchoice = 1;
         first_input = false;
       }
       else{
@@ -35,13 +38,16 @@ public class Game {
       first_input = false;
     }
     
-
-    System.out.println("Type: a or attack to attack your opponent, sp/special to use a special attack, su/support to heal yourself, or quit to stop the game.");
+    System.out.println("\nYou have options. You can do a normal attack, a special attack which is stronger than a normal attack but also consumes mana, support yourself to heal and gain some mana, or quit to end the game.");
+    System.out.println("\nRemember: type (a)ttack, (sp)ecial, (su)pport, or quit.");
     while (p1.getHP() > 0 && p2.getHP() > 0){
+      System.out.println("----------------------------------");
+      System.out.println(userName + "'s turn!\n");
       System.out.println("CURRENT STATS FOR " + userName + ":" + " " + p1.getHP() + "/" + p1.getmaxHP() + "HP, " + p1.getSpecial() + "/" + p1.getSpecialMax() + " mana");
       System.out.println("CURRENT STATS FOR COMPUTER: " + p2.getHP() + "/" + p2.getmaxHP() + "HP, " + p2.getSpecial() + "/" + p2.getSpecialMax() + " mana");
 
-      System.out.println("What action would you like to take this turn?");
+      System.out.println("\nWhat action would you like to take this turn?");
+      System.out.print("USER INPUT: ");
 
       boolean method = true;
       String option = "";
@@ -70,6 +76,8 @@ public class Game {
       }
 
       if(p2.getHP() > 0){
+        System.out.println("\n############");
+        System.out.println("\nComputer's turn!\n");
         int compchoice = (int)(Math.random() * 3);
         if (compchoice == 0){
           System.out.println(p2.attack(p1));
@@ -82,13 +90,14 @@ public class Game {
         }
       }
       else{
-        System.out.println("The computer died! " + userName + " wins the battle!");
+        System.out.println("\n\n\nDid something happen???\n\n\n... \n\n\nThe computer died! " + userName + " wins the battle!");
         return;
       }
 
       if(p1.getHP() <= 0){
-        System.out.println(userName + " died. The computer wins the battle. Better luck next time.");
+        System.out.println("Oh my, it isn't looking so good.\n\n\n ... \n\n\n" + userName + " died. The computer wins the battle. Better luck next time.");
       }
     }
+    userInput.close();
   }
 }
