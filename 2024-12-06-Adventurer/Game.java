@@ -90,12 +90,13 @@ public class Game {
         }
       }
       else{
-        System.out.println("\n\n\nDid something happen???\n\n\n... \n\n\nThe computer died! " + userName + " wins the battle!");
+        System.out.println("\n\n\nDid something happen???\n\n\n...\n\n\nThe computer died! " + userName + " wins the battle!");
         return;
       }
 
       if(p1.getHP() <= 0){
-        System.out.println("Oh my, it isn't looking so good.\n\n\n ... \n\n\n" + userName + " died. The computer wins the battle. Better luck next time.");
+        System.out.println("Oh my, it isn't looking so good.\n\n\n...\n\n\n" + userName + " died. The computer wins the battle. Better luck next time.");
+        return;
       }
     }
     userInput.close();
