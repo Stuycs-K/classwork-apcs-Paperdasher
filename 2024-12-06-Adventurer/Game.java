@@ -23,6 +23,7 @@ public class Game {
       }
       else{
         System.out.println("Your input is invalid. Please choose either the input w or c.");
+        System.out.print("USER INPUT: ");
       }
     }
 
@@ -59,6 +60,7 @@ public class Game {
         }
         else{
           System.out.println("Your input was not a valid option. Please re-enter a valid action. The valid inputs are a, attack, sp, special, su, support, quit.");
+          System.out.print("USER INPUT: ");
         }
       }
 

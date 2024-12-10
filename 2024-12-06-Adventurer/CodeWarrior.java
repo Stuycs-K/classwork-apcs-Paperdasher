@@ -6,7 +6,7 @@ public class CodeWarrior extends Adventurer{
     with all parameters.*/
   public CodeWarrior(String name, int hp, String language){
     super(name,hp);
-    caffeineMax = 12;
+    caffeineMax = 20;
     caffeine = caffeineMax/2;
     preferredLanguage = language;
   }
@@ -53,8 +53,8 @@ public class CodeWarrior extends Adventurer{
     Reduces caffeine by 8.
   */
   public String specialAttack(Adventurer other){
-    if(getSpecial() >= 8){
-      setSpecial(getSpecial()-8);
+    if(getSpecial() >= 5){
+      setSpecial(getSpecial()-5);
       int damage = (int)(Math.random()*5+Math.random()*5)+3;
       other.applyDamage(damage);
       return this + " used their "+preferredLanguage+
@@ -72,7 +72,7 @@ public class CodeWarrior extends Adventurer{
   }
   /*Restores 6 special and 1 hp to self.*/
   public String support(){
-    int hp = 1;
+    int hp = 5;
     setHP(getHP()+hp);
     return this+" drinks a coffee to restores "+restoreSpecial(6)+" "
     + getSpecialName()+ " and "+hp+" HP";
