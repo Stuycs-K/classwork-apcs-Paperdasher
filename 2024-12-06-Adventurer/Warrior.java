@@ -5,12 +5,12 @@ public class Warrior extends Adventurer{
   //constructors
   public Warrior(String name){
     super(name);
-    mana = (int)(Math.random() * 100 + 1);
+    mana = (int)(Math.random() * 10 + Math.random()* 10 + 2);
   }
 
   public Warrior(String name, int hp){
     super(name, hp);
-    mana = (int)(Math.random() * 100 + 1);
+    mana = (int)(Math.random() * 10 + Math.random() * 10 + 2);
   }
 
   public Warrior(String name, int hp, int mana){
@@ -32,7 +32,7 @@ public class Warrior extends Adventurer{
   }
 
   public int getSpecialMax(){
-    return 100;
+    return 20;
   }
 
 
